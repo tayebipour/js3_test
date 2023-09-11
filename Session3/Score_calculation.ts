@@ -1,8 +1,11 @@
-const score :number =70;
+const score :number =10;
 
 //control flow (Score calculation) with if/else
-
-if(score >= 90)
+if(score>100)
+{
+console.log("valid number")
+}
+else if(score >= 90)
 {
     console.log("A");
 }else if(score >= 80)
