@@ -3,7 +3,7 @@ const lists = {
     family:"",
     mobile: "",
 }
-const arraye_lists:string[]=[];
+const arraye_lists:string[]=["farhad","taye", "250"];
 
 
 function add_lists(name: string, family: string, mobile: number) {
@@ -14,13 +14,22 @@ function add_lists(name: string, family: string, mobile: number) {
   
     arraye_lists.push(persons);
   }
-  add_lists(""+"farhad", ""+"taye", 250);
+  
 
   function search_list(search_name:string)
   {
+  const fori=arraye_lists.length;
+  for(let i=0; i<fori-1;i++ )
+  { 
+    if(arraye_lists[i]==search_name)
+    { 
+      console.log(arraye_lists[i]);
+      break;
+    }else{
+      console.log("not found");
 
-    let found = arraye_lists.find(element=>element == search_name);
-        console.log(found);
+    }
+  }
   }
 
   
