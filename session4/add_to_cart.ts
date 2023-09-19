@@ -1,11 +1,17 @@
 
 const  person_profile:string[] =[];
+interface Add{
+  name:string;
+}
 
 
 function add_to_cart(add:string)
 {
+  const persons_profile:Add = {
+    name:add,
+  }
   
-    person_profile.push(add);
+    person_profile.push(persons_profile.name);
 
   if(person_profile==null)
   {

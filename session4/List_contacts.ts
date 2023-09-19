@@ -1,18 +1,20 @@
-const list = {
-    name:"",
-    family:"",
-    mobile: "",
+
+interface List {
+  name:string;
+  family:string;
+  mobile:number;
 }
-const arraye_list:string[]=[];
+const arraye_list:List[]=[];
+
 
 
 function add_list(name: string, family: string, mobile: number) {
-    const person=Object.create(list)
-    person.name = name;
-    person.family = family;
-    person.mobile = mobile;
-  
-    arraye_list.push(person);
+  const list :List= {
+    name:name,
+    family:family,
+    mobile: mobile,
+}
+    arraye_list.push(list);
   }
 
   const number_person = parseInt(""+ prompt("please enter number of persons"));

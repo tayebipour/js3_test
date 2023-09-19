@@ -1,35 +1,34 @@
-const lists = {
-    name:"",
-    family:"",
-    mobile: "",
+
+interface Lists{
+      name:string;
+      family:string;
+      mobile:number;
 }
-const arraye_lists:string[]=["farhad","taye", "250"];
+const arraye_lists:Lists[]=[{
+      name:"farhad",
+      family: "tayebipour",
+      mobile: 250,
+}];
 
 
 function add_lists(name: string, family: string, mobile: number) {
-    const persons=Object.create(lists)
-    persons.name = name;
-    persons.family = family;
-    persons.mobile = mobile;
+   
+
+    const lists :Lists= {
+      name:name,
+      family: family,
+      mobile: mobile,
+  }
   
-    arraye_lists.push(persons);
+    arraye_lists.push(lists);
   }
   
 
-  function search_list(search_name:string)
+  function search_list(search_name)
   {
-  const fori=arraye_lists.length;
-  for(let i=0; i<fori-1;i++ )
-  { 
-    if(arraye_lists[i]==search_name)
-    { 
-      console.log(arraye_lists[i]);
-      break;
-    }else{
-      console.log("not found");
-
-    }
-  }
+    arraye_lists.find((element) => element == search_name) ? console.log("found") : console.log("not found");
+    // console.log(arraye_lists.includes(search_name));
+    // arraye_lists.includes(search_name)==true ? console.log("found") : console.log("not found");
   }
 
   
@@ -38,7 +37,6 @@ function add_lists(name: string, family: string, mobile: number) {
   if(what_do==1)
   {
     const number_persons = parseInt(""+ prompt("please enter number of persons"));
-  
 
     if(number_persons > 0)
   {
@@ -50,15 +48,23 @@ function add_lists(name: string, family: string, mobile: number) {
         add_lists(""+Insert_name, ""+Insert_family, Insert_number);
       }
       console.log(arraye_lists);
-  }  else {
+
+  }  
+  else {
       console.log("Error, enter the number!!!")
   }
-  
-  
+
   }
   else if(what_do==2)
   {
-    const Insert_search_name = prompt("Please enter name:");
-    search_list(""+ Insert_search_name);
+    const Insert_search_name:Lists = {
+      name:"farhad",
+      family: "tayebipour",
+      mobile: 250,
+    };
+    console.log(Insert_search_name);
+    search_list(Insert_search_name.name);
+
   }
+
   
